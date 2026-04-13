@@ -10,8 +10,8 @@ public class PayRollMethod {
     String usersName = usersName();
     double hoursWorked = hoursWorked();
     double hourlyWage = hourlyWage();
-
-        System.out.println("Your name is: " + usersName + " and you worked " + hoursWorked() + ",so your gross pay is " );
+    double payFormula = payFormula(hourlyWage,hoursWorked);
+        System.out.println("Your name is: " + usersName + " and you worked " + hoursWorked() + ",so your gross pay is " + payFormula );
     }
 
     //usersName method
@@ -33,15 +33,15 @@ public class PayRollMethod {
     }
 
     //overtimeFormula Method
-    public static void overtimeFormula(double hourlyWage, int hoursWorked){
+    public static double payFormula(double hourlyWage, double hoursWorked){
         double grossPay = 0;
         if (hoursWorked > 40){
             double overtimeHours = hoursWorked - 40;
             double overTimeGrossPay = (hourlyWage * 40) + (overtimeHours * hourlyWage * 1.5);
-            grossPay = hoursWorked * hourlyWage;
-            System.out.printf("You worked %d, so your gross pay with overtime is $%.2f: ", hoursWorked,overtimeHours);
+           return overTimeGrossPay;
         }else{
-            System.out.printf("You worked %d, so your gross pay is $%2.f", hoursWorked, grossPay);
+            grossPay = hourlyWage * hoursWorked;
+            return grossPay;
         }
     }
 }
