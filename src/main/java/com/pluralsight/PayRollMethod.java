@@ -11,7 +11,8 @@ public class PayRollMethod {
     double hoursWorked = hoursWorked();
     double hourlyWage = hourlyWage();
     double payFormula = payFormula(hourlyWage,hoursWorked);
-        System.out.println("Your name is: " + usersName + " and you worked " + hoursWorked() + ",so your gross pay is " + payFormula );
+
+    }
     }
 
     //usersName method
